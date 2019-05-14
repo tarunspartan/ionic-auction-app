@@ -1,0 +1,65 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>login</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content padding>
+  <img id="logo" src="../../assets/imgs/auction.svg" alt="logo">
+  <ion-card>
+
+    <ion-card-header style="text-align: center; font-family:Montserrat"><b>LOGIN</b></ion-card-header>
+
+    <ion-card-content>
+      <form [formGroup]="todo" (submit)="checkConnection()">
+
+        <ion-list no-lines>
+
+          <ion-item>
+
+            <ion-label>
+              <ion-icon name="person"></ion-icon>
+            </ion-label>
+            <ion-input type="email" name="userEmail" placeholder="Email" [(ngModel)]="userEmail" formControlName="email"
+              required></ion-input>
+          </ion-item>
+
+          <ion-item>
+
+            <ion-label>
+              <ion-icon name="key"></ion-icon>
+            </ion-label>
+            <ion-input type="password" name="userPassword" placeholder="Password" [(ngModel)]="userPassword"
+              formControlName="password" required></ion-input>
+          </ion-item>
+
+        </ion-list>
+        <div style="text-align: right">
+          <a (click)="forgotPassword()" color="danger" small clear style="font-size: 10px;">Forgot password?</a><br>
+        </div>
+        <button tappable ion-button type="submit" color="secondary" [disabled]="!todo.valid" block>
+          <div *ngIf="status; else logging">LOGIN</div>
+          <ng-template #logging>LOGGING IN...</ng-template>
+        </button>
+        <br>
+        <a style="display: flex;justify-content: center;" ion-button tappable (click)="skipLogin()" color="primary"
+          outline small>
+          SKIP
+        </a>
+      </form>
+    </ion-card-content>
+
+  </ion-card>
+
+  <a color="dark" (click)="signup()" small clear style="font-size: 15px;color: white">Don't have an account? <b>Sign
+      up</b> here.</a>
+</ion-content>

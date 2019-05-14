@@ -1,0 +1,72 @@
+<!--
+  Generated template for the SellPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sell</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="todo" (submit)="checkConnection()">
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label stacked>Name</ion-label>
+        <ion-input name="name" clearInput="true" formControlName="name" [(ngModel)]="product.name" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Minimal Price</ion-label>
+        <ion-input name="price" type="number" formControlName="price" [(ngModel)]="product.initialprice" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Last Date</ion-label>
+        <ion-datetime name="date" formControlName="date" [(ngModel)]="product.date" displayFormat="DD/MMM/YY hh:mm A"
+          type="date" placeholder="DD/MMM/YYYY HH:MM" required></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Category</ion-label>
+        <ion-select name="category" formControlName="category" [(ngModel)]="product.category" interface="popover">
+          <ion-option value="Fine Art">Fine Art</ion-option>
+          <ion-option value="Coins and Jewelry">Coins & Jewelry</ion-option>
+          <ion-option value="Collectibles">Collectibles</ion-option>
+          <ion-option value="Antiques">Antiques</ion-option>
+          <ion-option value="Memorabilia">Memorabilia</ion-option>
+          <ion-option value="Clothing and Souvenirs">Clothing & Souvenirs</ion-option>
+        </ion-select>
+      </ion-item>
+      <br>
+      <div style="text-align: center">
+
+        <a ion-button color="dark" (click)="openActionSheet()" outline round>
+          <ion-icon name="add"></ion-icon>Add Photos
+        </a>
+
+      </div>
+
+
+      <div *ngIf="show"><img src="{{product.image || loader}}" alt="photo"></div>
+
+      <ion-item>
+        <ion-label stacked>Description</ion-label>
+        <ion-textarea name="description" formControlName="description" [(ngModel)]="product.description" rows="4"
+          placeholder="Write something about product" required></ion-textarea>
+      </ion-item>
+
+    </ion-list>
+
+    <button ion-button color="default" type="submit" [disabled]="!todo.valid" block>Sell</button>
+  </form>
+</ion-content>

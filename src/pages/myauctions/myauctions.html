@@ -1,0 +1,53 @@
+<!--
+  Generated template for the MyauctionsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Auctions</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <!-- <div *ngFor="let c of myauctionsdata"> -->
+  <!-- <ion-item  style=" border-style: solid;
+    border-width: 1px 1px 2px 1px; border-color:#2368a0;" no-lines> -->
+  <!-- <ion-item> -->
+  <!-- <ion-thumbnail item-start>
+      <img src="{{c.image}}" style="border: 1px solid rgb(111, 186, 216);
+      border-radius: 50%; height :60px; width :60px; padding :2px;">
+    </ion-thumbnail> -->
+  <!-- <h2><b>{{c.name}}</b></h2> -->
+  <!-- <p>₹{{c.price}}/-</p>
+    <p>Will end on <ion-note>{{c.date}}</ion-note></p>
+    <p>{{c.description}}</p> -->
+  <!-- </ion-item> -->
+  <ion-list *ngFor="let c of myauctionsdata">
+    <ion-item-sliding>
+      <ion-item (click)="open(c._id)">
+        <ion-avatar item-start>
+          <img src="{{c.image}}">
+        </ion-avatar>
+        <h2>{{c.name}}</h2>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button (click)="deleteItem(c._id)" color="danger">
+          <ion-icon name="trash"></ion-icon>
+          DELETE
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <!-- </div> -->
+
+</ion-content>

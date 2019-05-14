@@ -1,0 +1,22 @@
+page-home {
+  .item-md {
+    padding-left: 10px !important;
+  }
+
+  // .item-md ion-thumbnail {
+  //   min-width: 10px !important;
+  //   min-height: 10px !important;
+  // }
+
+
+  img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(111, 186, 216);
+    border-radius: 10%;
+    height: 70px !important;
+    width: 70px !important;
+    padding: 2px;
+  }
+
+}

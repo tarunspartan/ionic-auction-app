@@ -1,0 +1,128 @@
+<ion-header>
+  <!-- <ion-navbar color="primary">
+    <button *ngIf="!isSearchOpened" ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title *ngIf="!isSearchOpened">Home</ion-title>
+    <ion-searchbar *ngIf="isSearchOpened" (ionInput)="getItems($event)" showCancelButton="true" (ionCancel)="isSearchOpened=false"></ion-searchbar>
+    <ion-buttons end>
+      <button ion-button icon-only *ngIf="!isSearchOpened" (click)="isSearchOpened=true">
+        <ion-icon name="search"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="show=true" end>
+        <ion-icon *ngIf="!show" name="funnel"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="show=false">
+        <ion-icon *ngIf="show" name="close"></ion-icon>
+      </button>
+
+    </ion-buttons>
+  </ion-navbar> -->
+
+  <ion-navbar color="primary" *ngIf="!show">
+
+    <button *ngIf="!isSearchOpened" ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title *ngIf="!isSearchOpened">Home</ion-title>
+
+    <ion-searchbar *ngIf="isSearchOpened" (ionInput)="getItems($event)" showCancelButton=true
+      (ionCancel)="isSearchOpened=false" animated="true"></ion-searchbar>
+
+    <ion-buttons end>
+
+      <button ion-button icon-only *ngIf="!isSearchOpened" (click)="isSearchOpened=true">
+        <ion-icon name="search"></ion-icon>
+      </button>
+
+      <button ion-button icon-only *ngIf="!isSearchOpened" (click)="show=true" end>
+        <ion-icon *ngIf="!show" name="funnel"></ion-icon>
+      </button>
+
+      <!-- <button ion-button *ngIf="isSearchOpened" icon-only (click)="show=false;isSearchOpened=false">
+        <ion-icon name="close"></ion-icon>
+      </button> -->
+
+    </ion-buttons>
+
+  </ion-navbar>
+
+  <ion-navbar color="primary" *ngIf="show">
+
+    <ion-item>
+      <ion-label>Select Category</ion-label>
+      <ion-select [(ngModel)]="category" (ngModelChange)="updateView($event)" interface="action-sheet">
+        <ion-option value="all">All</ion-option>
+        <ion-option value="Fine Art">Fine Art</ion-option>
+        <ion-option value="Coins and Jewelry">Coins & Jewelry</ion-option>
+        <ion-option value="Collectibles">Collectibles</ion-option>
+        <ion-option value="Antiques">Antiques</ion-option>
+        <ion-option value="Memorabilia">Memorabilia</ion-option>
+        <ion-option value="Clothing and Souvenirs">Clothing & Souvenirs</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-buttons end>
+
+      <button ion-button icon-only (click)="show=false; ngOnInit()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+
+    </ion-buttons>
+
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <!-- <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-down" pullingText="Pull to refresh" refreshingSpinner="crescent">
+    </ion-refresher-content>
+  </ion-refresher> -->
+
+  <!-- <ion-card *ngIf="show">
+    <ion-list>
+      <ion-item>
+        <ion-label>Select Category</ion-label>
+        <ion-select [(ngModel)]="category" (ngModelChange)="updateView($event)" interface="action-sheet">
+          <ion-option value="all">All</ion-option>
+          <ion-option value="Fine Art">Fine Art</ion-option>
+          <ion-option value="Coins and Jewelry">Coins & Jewelry</ion-option>
+          <ion-option value="Collectibles">Collectibles</ion-option>
+          <ion-option value="Antiques">Antiques</ion-option>
+          <ion-option value="Memorabilia">Memorabilia</ion-option>
+          <ion-option value="Clothing and Souvenirs">Clothing & Souvenirs</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+</ion-card> -->
+
+
+  <h1 style="margin: 10px;font-family: Montserrat;color: cornflowerblue">{{cat | uppercase}}</h1>
+
+  <div *ngIf="showloader">
+    <page-loader id="loading"> </page-loader>
+  </div>
+  <div *ngIf="!showloader">
+    <div *ngFor="let c of products">
+      <ion-card>
+        <ion-item (click)="open(c._id)" no-lines>
+          <!-- style=" border-style: solid;
+        border-width: 1px 1px 2px 1px; border-color:#2368a0;" -->
+          <ion-thumbnail item-start>
+            <img src="{{c.image}}">
+          </ion-thumbnail>
+          <h2 style="color: cornflowerblue;font-family: Montserrat"><b>{{c.name | uppercase}}</b></h2>
+          <br>
+          <p><b>Initial Bid Price:</b> ₹{{c.initialprice}}/-</p>
+          <p>Will end on <ion-note>{{c.date | date}}</ion-note>
+          </p>
+        </ion-item>
+      </ion-card>
+    </div>
+  </div>
+
+</ion-content>

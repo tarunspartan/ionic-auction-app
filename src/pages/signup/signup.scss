@@ -1,0 +1,26 @@
+page-signup {
+  img {
+    // width: 130px;
+    // height: 130px;
+    // display: block;
+    // margin-left: auto;
+    // margin-right: auto;
+    // margin-top: 30px;
+    // margin-bottom: 20px;
+  }
+
+  #logo {
+    width: 255px;
+    height: 165px;
+    z-index: -1;
+  }
+
+  .scroll-content {
+    overflow-y: hidden !important;
+  }
+
+  ion-icon {
+    color: cornflowerblue;
+  }
+
+}

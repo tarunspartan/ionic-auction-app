@@ -1,0 +1,30 @@
+<ion-menu id="authenticated" [content]="content">
+
+
+  <ion-content>
+    <img id="logo" src="../assets/imgs/auctionlogo.png" alt="logo">
+    <div style="padding-left: 20px">
+      <!-- <ion-chip>
+        <ion-icon name="person" color="primary"></ion-icon>
+        <ion-label>{{mail}}</ion-label>
+      </ion-chip> -->
+    </div>
+    <br>
+    <ion-list no-lines>
+      <button menuClose ion-item color="{{p.color}}" style="font-family:Montserrat" *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon name="{{p.icon}}" style="padding-right: 5px"></ion-icon> {{p.title | uppercase}}
+      </button>
+    </ion-list>
+
+
+    <button menuClose ion-button color="danger" clear block style="position: absolute;
+        bottom:0px;" (click)="logout()">Logout
+      <ion-icon name="log-out"> </ion-icon></button>
+
+
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
