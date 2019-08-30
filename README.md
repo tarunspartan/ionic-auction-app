@@ -3,7 +3,7 @@
 
 
 
-|  <h4>Sell Page</h4>   |   <h4>Category Search</h4>    |
+|  <h5>Sell Page</h5>   |   <h4>Category Search</h4>    |
 |------------|-------------|
 | <img src="/screenshots/IMG-20190719-WA0009.jpg" height=640px width=360px/> | <img src="/screenshots/IMG-20190719-WA0010.jpg" height=640px width=360px/> |
 
