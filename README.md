@@ -5,7 +5,7 @@
 
 |  <h2>Sell Page</h2>   |   <h2>Category Search</h2>    |
 |------------|-------------|
-| <img src="/screenshots/IMG-20190719-WA0009.jpg" height=640px width=360px/> | <img src="/screenshots/IMG-20190719-WA0010.jpg" height=640px width=360px/> |
+| <img src="/screenshots/IMG-20190719-WA0009.jpg" height=640px width=360px box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)/> | <img src="/screenshots/IMG-20190719-WA0010.jpg" height=640px width=360px/> |
 
 | <h2>Home Page</h2>      |   <h2>Category Selection </h2>   |
 |------------|-------------|
