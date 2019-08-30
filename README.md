@@ -24,6 +24,6 @@
 | <img src="/screenshots/IMG-20190719-WA0017.jpg" height=640px width=360px/> | <img src="/screenshots/IMG-20190719-WA0018.jpg" height=640px width=360px/> |
 
 
-| Searching   |      |
+| Searching   |   Product Info Page   |
 |------------|-------------|
-| <img src="/screenshots/IMG-20190719-WA0019.jpg" height=640px width=360px/> |  |
+| <img src="/screenshots/IMG-20190719-WA0019.jpg" height=640px width=360px/> | <img src="/screenshots/IMG-20190719-WA0020.jpg" height=640px width=360px/> |
