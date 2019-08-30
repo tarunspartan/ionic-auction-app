@@ -3,7 +3,7 @@
 
 
 
-|  **Sell Page**      |   Category Search    |
+|  ## **Sell Page**      |   Category Search    |
 |------------|-------------|
 | <img src="/screenshots/IMG-20190719-WA0009.jpg" height=640px width=360px/> | <img src="/screenshots/IMG-20190719-WA0010.jpg" height=640px width=360px/> |
 
